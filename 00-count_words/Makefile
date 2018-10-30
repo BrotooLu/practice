@@ -9,3 +9,8 @@ lexer.o: lexer.c
 
 lexer.c: lexer.l
 	flex -t lexer.l > lexer.c
+
+# clean target will confused as file name clean if not define .PHONY
+.PHONY: clean
+clean:
+	rm *.o lexer.c count_words
